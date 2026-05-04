@@ -55,7 +55,7 @@ const Header = ({ centerText, rightText, hideRight, isActive }) => (
       <svg width="129" height="40" viewBox="0 0 129 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-transform group-hover:scale-105">
         <rect width="40" height="40" rx="8" fill="white" fillOpacity="0.1" stroke="white" strokeOpacity="0.3"/>
         <path d="M12 20H28M20 12V28" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-        <text x="50" y="26" fill="white" fontSize="18" fontWeight="800" letterSpacing="-0.02em" fontFamily="Tajawal">مساواة</text>
+        <text x="46" y="26" fill="white" fontSize="16" fontWeight="800" letterSpacing="-0.02em" fontFamily="Plus Jakarta Sans">EQUAL</text>
       </svg>
     </div>
     {centerText && (
@@ -71,11 +71,11 @@ const Header = ({ centerText, rightText, hideRight, isActive }) => (
 
 // Reusable animated interactive card component
 const GlassCard = ({ icon: Icon, title, desc, delay, isActive, className = "", children, emoji }) => (
-  <div style={glassStyle} className={`hover-glass rounded-3xl p-[clamp(24px,2.5vw,48px)] flex flex-col justify-end transition-all ${isActive ? `anim-up ${delay}` : 'opacity-0 translate-y-12'} ${className}`}>
-    {Icon && <Icon className="text-[#D2FF55] mb-[5%] w-[clamp(36px,3.5vw,56px)] h-[clamp(36px,3.5vw,56px)] stroke-[1.5] anim-float" />}
+  <div style={glassStyle} className={`hover-glass rounded-3xl p-[clamp(20px,2vw,36px)] flex flex-col justify-center transition-all ${isActive ? `anim-up ${delay}` : 'opacity-0 translate-y-12'} ${className}`}>
+    {Icon && <Icon className="text-[#D2FF55] mb-[5%] w-[clamp(32px,3vw,48px)] h-[clamp(32px,3vw,48px)] stroke-[1.5] anim-float shrink-0" />}
     {children}
-    {title && <h3 className="text-[clamp(18px,1.8vw,36px)] font-bold mb-4 flex items-center justify-center gap-2">{title} <span className="text-[1.2em]">{emoji}</span></h3>}
-    {desc && <p className="text-[clamp(14px,1.3vw,22px)] text-white/85 leading-[1.8]">{desc}</p>}
+    {title && <h3 className="text-[clamp(16px,1.5vw,26px)] font-bold mb-3 flex items-center gap-2 w-full">{title} <span className="text-[1.2em]">{emoji}</span></h3>}
+    {desc && <p className="text-[clamp(13px,1.1vw,18px)] text-white/85 leading-[1.7]">{desc}</p>}
   </div>
 );
 
@@ -83,22 +83,22 @@ const GlassCard = ({ icon: Icon, title, desc, delay, isActive, className = "", c
 const Slide1 = ({ isActive }) => (
   <div className="relative w-full h-full text-white">
     <VideoBackground url="https://stream.mux.com/JNJEOYI6B3EffB9f5ZhpGbuxzc6gSyJcXaCBbCgZKRg.m3u8" />
-    <Header rightText="عرض تقديمي 🎬" hideRight={false} isActive={isActive} />
+    <Header rightText="Presentation 🎬" hideRight={false} isActive={isActive} />
     
     <div className="relative z-10 w-full h-full flex flex-col justify-center px-[5.2%] -mt-[3%]">
       <div className={`inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full w-max mb-6 border border-white/20 backdrop-blur-md ${isActive ? 'anim-down delay-200' : 'opacity-0'}`}>
         <Sparkles className="w-5 h-5 text-[#D2FF55]" />
-        <span className="text-sm font-bold tracking-wide">حقوق الإنسان</span>
+        <span className="text-sm font-bold tracking-wide">Human Rights</span>
       </div>
       <h1 className={`text-[clamp(40px,7vw,110px)] tracking-tight leading-[1.1] font-extrabold max-w-5xl ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-        حقوق ذوي الإعاقة: <br/> رؤية عالمية متكاملة 🌍
+        Disability Rights: <br/> A Global Vision 🌍
       </h1>
       <p className={`text-[clamp(22px,2.8vw,52px)] opacity-95 mt-[3%] max-w-4xl font-medium leading-[1.6] ${isActive ? 'anim-up delay-300' : 'opacity-0'}`}>
-        استعراض تحليلي للأطر الدينية 🕌، القانونية ⚖️، والإنسانية 🤝 التي تضمن الكرامة وتكافؤ الفرص.
+        An analytical review of the religious 🕌, legal ⚖️, and humanitarian 🤝 frameworks ensuring dignity and equal opportunity.
       </p>
       <div className={`text-[clamp(16px,1.4vw,28px)] opacity-80 mt-[4%] flex items-center gap-4 ${isActive ? 'anim-up delay-500' : 'opacity-0'}`}>
         <div className="w-12 h-[3px] bg-[#D2FF55] rounded-full"></div>
-        نظرة عامة وتحليل للوثيقة الاستراتيجية 📄
+        Strategic Document Overview & Analysis 📄
       </div>
     </div>
   </div>
@@ -108,32 +108,32 @@ const Slide1 = ({ isActive }) => (
 const Slide2 = ({ isActive }) => (
   <div className="relative w-full h-full text-white">
     <VideoBackground url="https://stream.mux.com/Kec29dVyJgiPdtWaQtPuEiiGHkJIYQAVUJcNiIHUYeo.m3u8" />
-    <Header centerText="المقدمة 📖" rightText="02" isActive={isActive} />
+    <Header centerText="Introduction 📖" rightText="02" isActive={isActive} />
     
     <div className="relative z-10 w-full h-full flex flex-col justify-center px-[5.2%]">
       <h2 className={`text-[clamp(32px,5vw,72px)] tracking-tight leading-[1.1] font-extrabold mb-[4%] ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-        من مرحلة الإحسان 🤲 <br className="hidden md:block" /> إلى عصر المساواة والحقوق ⚖️
+        From Charity 🤲 <br className="hidden md:block" /> to the Era of Equality & Rights ⚖️
       </h2>
       
       <div className="flex flex-row mt-[2%] gap-[5%] items-stretch h-[45%]">
-        <div className={`flex-[0_0_22%] flex flex-col justify-center p-8 rounded-3xl bg-white/5 border border-white/10 hover-glass ${isActive ? 'anim-right delay-300' : 'opacity-0'}`}>
+        <div className={`flex-[0_0_22%] flex flex-col justify-center p-8 rounded-3xl bg-white/5 border border-white/10 hover-glass ${isActive ? 'anim-left delay-300' : 'opacity-0'}`}>
           <div className="text-[clamp(48px,6vw,90px)] font-black leading-none text-[#D2FF55] pulse-glow w-max">2006</div>
           <div className="text-[clamp(15px,1.3vw,24px)] opacity-90 mt-[8%] leading-[1.7] font-medium">
-            العام الفاصل الذي شهد إقرار اتفاقية الأمم المتحدة كدستور عالمي ملزم 📜.
+            The defining year the UN Convention was established as a binding global constitution 📜.
           </div>
         </div>
         
         <div className={`flex-[0_0_42%] flex items-center ${isActive ? 'anim-up delay-400' : 'opacity-0'}`}>
           <p className="text-[clamp(16px,1.4vw,26px)] opacity-100 leading-[2] font-semibold text-justify">
-            إن قضية الأشخاص ذوي الإعاقة لم تعد مجرد مسألة هامشية، بل أصبحت معياراً أساسياً لتقدم الأمم ومدى احترامها العميق لحقوق الإنسان 🌟. لقد شهد العالم تحولاً جذرياً في النظرة إليهم؛ من مجرد فئة تتلقى التعاطف إلى نهج حقوقي أصيل يستند إلى مبادئ الدمج الشامل 🤝.
+            The issue of persons with disabilities is no longer a marginal matter, but a fundamental benchmark of a nation's progress and profound respect for human rights 🌟. The world has witnessed a radical shift in perspective; from a group receiving temporary sympathy to a genuine rights-based approach grounded in comprehensive inclusion 🤝.
           </p>
         </div>
         
-        <div className={`flex-[0_0_22%] flex flex-col justify-between p-8 rounded-3xl bg-white/5 border border-white/10 hover-glass ${isActive ? 'anim-left delay-500' : 'opacity-0'}`}>
+        <div className={`flex-[0_0_22%] flex flex-col justify-between p-8 rounded-3xl bg-white/5 border border-white/10 hover-glass ${isActive ? 'anim-right delay-500' : 'opacity-0'}`}>
           <div>
             <div className="text-[clamp(48px,6vw,90px)] font-black leading-none text-[#D2FF55] pulse-glow w-max">5%</div>
             <div className="text-[clamp(15px,1.3vw,24px)] opacity-90 mt-[8%] leading-[1.7] font-medium">
-              نسبة التوظيف الدنيا المخصصة إلزامياً 💼.
+              Minimum mandatory employment quota in pioneering legislations 💼.
             </div>
           </div>
           <svg className="w-full h-[60px] mt-[15%] anim-float" viewBox="0 0 100 30" preserveAspectRatio="none">
@@ -152,47 +152,47 @@ const Slide2 = ({ isActive }) => (
   </div>
 );
 
-// --- Slide 3: The Problem/Challenge (Redistributed for optimal space filling) ---
+// --- Slide 3: The Problem/Challenge ---
 const Slide3 = ({ isActive }) => (
   <div className="relative w-full h-full text-white flex flex-col">
     <VideoBackground url="https://stream.mux.com/fHfa8VIbBdqZelLGg5thjsypZ101M01dbyIMLNDWQwlLA.m3u8" />
-    <Header centerText="التحديات والمشكلات 🚧" rightText="03" isActive={isActive} />
+    <Header centerText="Challenges & Issues 🚧" rightText="03" isActive={isActive} />
     
     <div className="relative z-10 w-full flex-1 flex flex-col justify-center px-[5.2%] pt-[2%]">
-      {/* Top Text Section taking horizontal space */}
+      {/* Top Text Section */}
       <div className="text-center w-full max-w-6xl mx-auto mb-[5%]">
         <h2 className={`text-[clamp(40px,6vw,90px)] tracking-tight leading-[1.1] font-extrabold mb-[3%] ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-          الفجوة بين النص والواقع 📉
+          The Gap Between Text & Reality 📉
         </h2>
         <p className={`text-[clamp(18px,1.6vw,28px)] opacity-90 leading-[1.8] font-medium max-w-4xl mx-auto ${isActive ? 'anim-up delay-200' : 'opacity-0'}`}>
-          رغم التطور الملحوظ في صياغة القوانين، لا يزال الأشخاص ذوو الإعاقة يواجهون تحديات جسيمة تعيق اندماجهم الكامل وتُهدد سلامتهم الأساسية في مختلف الظروف.
+          Despite notable progress in drafting laws, persons with disabilities still face severe challenges hindering their full integration and threatening their basic safety.
         </p>
       </div>
       
-      {/* 3 Equal Columns to perfectly fill the lower half space */}
+      {/* 3 Equal Columns */}
       <div className="grid grid-cols-3 gap-[3%] w-full h-[45%]">
         <GlassCard 
           isActive={isActive} delay="delay-300"
           emoji="🛑" 
-          title="قصور التشريعات"
-          desc="تكمن الأزمة الكبرى في الفجوة الشاسعة بين النصوص القانونية المثالية والتطبيق العملي الفعلي، مما يجعل العديد من الحقوق مجرد حبر على ورق دون أثر ملموس."
-          className="text-center items-center justify-center border-t-4 border-t-orange-500/80 hover:border-orange-500"
+          title="Legislative Shortcomings"
+          desc="The major crisis lies in the vast gap between ideal legal texts and actual practical application, making many rights mere ink on paper without tangible impact."
+          className="items-center text-center justify-center border-t-4 border-t-orange-500/80 hover:border-orange-500"
         />
         
         <GlassCard 
           isActive={isActive} delay="delay-400"
           emoji="🚧" 
-          title="تحديات البنية التحتية"
-          desc="غياب المعايير الحقيقية لـ 'إمكانية الوصول' في المرافق العامة والمواصلات، مما يعزز حالة العزلة والتهميش المجتمعي بشكل يومي."
-          className="text-center items-center justify-center border-t-4 border-t-yellow-500/80 hover:border-yellow-500"
+          title="Infrastructure Challenges"
+          desc="The lack of genuine 'accessibility' standards in public facilities and transport reinforces daily isolation and societal marginalization."
+          className="items-center text-center justify-center border-t-4 border-t-yellow-500/80 hover:border-yellow-500"
         />
 
         <GlassCard 
           isActive={isActive} delay="delay-500"
           emoji="💣" 
-          title="تفاقم المعاناة وقت النزاعات"
-          desc="استحالة الإخلاء الآمن تحت القصف (كما في قطاع غزة)، مما يكشف عن تجاهل دولي صارخ للمادة ١١ من الاتفاقية الأممية المتعلقة بالحماية في حالات الطوارئ."
-          className="text-center items-center justify-center border-t-4 border-t-red-600/80 bg-red-500/5 hover:border-red-500"
+          title="Suffering During Conflicts"
+          desc="The impossibility of safe evacuation under bombardment (as in Gaza), revealing a glaring international disregard for Article 11 of the UN Convention regarding protection in emergencies."
+          className="items-center text-center justify-center border-t-4 border-t-red-600/80 bg-red-500/5 hover:border-red-500"
         />
       </div>
     </div>
@@ -203,70 +203,108 @@ const Slide3 = ({ isActive }) => (
 const Slide4 = ({ isActive }) => (
   <div className="relative w-full h-full text-white">
     <VideoBackground url="https://stream.mux.com/4IMYGcL01xjs7ek5ANO17JC4VQVUTsojZlnw4fXzwSxc.m3u8" />
-    <Header centerText="الحل المقترح 💡" rightText="04" isActive={isActive} />
+    <Header centerText="Proposed Solution 💡" rightText="04" isActive={isActive} />
     
     <div className="relative z-10 w-full h-full flex flex-col justify-center px-[5.2%] pt-[5%]">
       <div className="text-center w-full max-w-5xl mx-auto mb-[6%]">
         <h2 className={`text-[clamp(36px,5.5vw,85px)] tracking-tight leading-[1.1] font-extrabold mb-[3%] ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-          منهجية الحلول الشاملة 🎯
+          Comprehensive Methodology 🎯
         </h2>
         <p className={`text-[clamp(16px,1.5vw,26px)] opacity-90 leading-[1.8] font-medium ${isActive ? 'anim-up delay-200' : 'opacity-0'}`}>
-          يتطلب التغيير الحقيقي مقاربة استراتيجية متكاملة تتجاوز الوعود، لبناء مؤسسات رقابية قوية قادرة على تحويل الحقوق المكتوبة إلى واقع مُعاش 🌟.
+          True change requires an integrated strategic approach beyond promises, building strong regulatory institutions capable of transforming written rights into lived reality 🌟.
         </p>
       </div>
 
       <div className="grid grid-cols-3 gap-[4%] w-full mt-auto mb-[8%] h-[40%]">
         <GlassCard 
           icon={Scale} emoji="⚖️"
-          title="تشريعات ملزمة" 
-          desc="إقرار وطني صارم يفرض نسبة التوظيف، وتوفير إعفاءات ضريبية متكاملة تجرم التمييز بكافة أشكاله." 
+          title="Binding Legislation" 
+          desc="Strict national endorsement enforcing employment quotas and providing comprehensive tax exemptions while criminalizing all forms of discrimination." 
           isActive={isActive} delay="delay-300" 
-          className="text-center items-center justify-center border-t-4 border-t-[#D2FF55]"
+          className="items-center text-center justify-center border-t-4 border-t-[#D2FF55]"
         />
         <GlassCard 
           icon={Building2} emoji="🏗️"
-          title="التصميم الشامل" 
-          desc="الإلزام القانوني بتطبيق معايير 'إمكانية الوصول' في المباني، النقل، والمنصات الرقمية." 
+          title="Universal Design" 
+          desc="Legal obligation to apply 'accessibility' standards across buildings, transportation, and digital platforms." 
           isActive={isActive} delay="delay-400"
-          className="text-center items-center justify-center border-t-4 border-t-blue-400"
+          className="items-center text-center justify-center border-t-4 border-t-blue-400"
         />
         <GlassCard 
           icon={Users} emoji="🤝"
-          title="توعية مجتمعية" 
-          desc="إطلاق استراتيجيات إعلامية لتغيير النظرة النمطية وتعزيز ثقافة الدمج في المدارس والعمل." 
+          title="Societal Awareness" 
+          desc="Launching educational campaigns to change stereotypical views and promote a culture of inclusion in schools and workplaces." 
           isActive={isActive} delay="delay-500"
-          className="text-center items-center justify-center border-t-4 border-t-purple-400"
+          className="items-center text-center justify-center border-t-4 border-t-purple-400"
         />
       </div>
     </div>
   </div>
 );
 
-// --- Slide 5: Core Features ---
+// --- Slide 5: Core Features (Fixed Layout & Sizes) ---
 const Slide5 = ({ isActive }) => (
   <div className="relative w-full h-full text-white flex flex-col">
     <VideoBackground url="https://stream.mux.com/00qQnfNo7sSpn3pB1hYKkyeSDvxs01NxiQ3sr29uL3e028.m3u8" />
-    <Header centerText="أهم النقاط ⭐" rightText="05" isActive={isActive} />
+    <Header centerText="Key Highlights ⭐" rightText="05" isActive={isActive} />
     
-    <div className="relative z-10 w-full flex-1 flex flex-col pt-[8%] px-[5.2%] pb-[6%]">
+    <div className="relative z-10 w-full flex-1 flex flex-col justify-center px-[5.2%] pt-[6%] pb-[4%]">
       <div className="text-center mb-[4%]">
         <h2 className={`text-[clamp(36px,5vw,80px)] tracking-tight leading-[1.1] font-extrabold ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-          الركائز الأساسية للدمج والكرامة 🏛️
+          Pillars of Inclusion & Dignity 🏛️
         </h2>
       </div>
       
-      <div className="flex-1 flex flex-col gap-[3%]">
-        <div className="flex-[1.2] flex gap-[3%] w-full">
-          <GlassCard emoji="🕌" icon={HeartHandshake} title="الرؤية الدينية" desc="تكريس كرامة الإنسان بغض النظر عن القيود، واعتبار العمل الفاعل والتقوى هما المعيار." isActive={isActive} delay="delay-200" className="flex-1" />
-          <GlassCard emoji="🌍" icon={Globe} title="المواثيق الدولية" desc="بناء استراتيجيات قارية طويلة الأمد لتوحيد مسارات التشريعات بالعقد العربي والأوروبي." isActive={isActive} delay="delay-300" className="flex-1" />
-          <GlassCard emoji="🛡️" icon={Gavel} title="الحقوق الشاملة" desc="ضمان التمكين السياسي (الترشح)، التمكين الاقتصادي، والضمان الاجتماعي للحماية من الفقر." isActive={isActive} delay="delay-400" className="flex-1" />
+      {/* 
+        Fully Fixed Grid-Like Flexbox Layout 
+        Ensures all 5 cards are exactly 31.33% wide.
+        Top row has 3 cards. Bottom row has 2 cards perfectly centered.
+      */}
+      <div className="flex-1 flex flex-col gap-[3%] w-full max-w-[90%] mx-auto">
+        {/* Top Row */}
+        <div className="flex-1 flex justify-center gap-[3%] w-full">
+          <GlassCard 
+            emoji="🕌" icon={HeartHandshake} 
+            title="Religious Perspective" 
+            desc="Establishing human dignity regardless of limitations, considering active work and piety as the true standards." 
+            isActive={isActive} delay="delay-200" 
+            className="w-[31.33%] shrink-0" 
+          />
+          <GlassCard 
+            emoji="🌍" icon={Globe} 
+            title="International Covenants" 
+            desc="Building long-term continental strategies to unify legislative paths in the Arab and European Decades." 
+            isActive={isActive} delay="delay-300" 
+            className="w-[31.33%] shrink-0" 
+          />
+          <GlassCard 
+            emoji="🛡️" icon={Gavel} 
+            title="Comprehensive Rights" 
+            desc="Ensuring political empowerment, economic enablement, and social security to protect against poverty." 
+            isActive={isActive} delay="delay-400" 
+            className="w-[31.33%] shrink-0" 
+          />
         </div>
         
-        <div className="flex-1 flex gap-[3%] w-full">
-          <GlassCard emoji="🇪🇬🇯🇴" icon={Landmark} title="الريادة الوطنية" desc="استلهام نماذج كالقانون المصري والأردني في إنشاء مجالس قومية لمراقبة الإعفاءات والضمانات." isActive={isActive} delay="delay-500" className="flex-1" />
-          <GlassCard emoji="🚨" icon={ShieldAlert} title="بروتوكولات الأزمات" desc="الضغط لتفعيل المادة ١١ من الاتفاقية لإلزام أطراف النزاع بإنقاذ ذوي الإعاقة وقت الكوارث." isActive={isActive} delay="delay-600" className="flex-1 border-red-500/30 bg-red-500/5 hover:border-red-500/60" />
+        {/* Bottom Row - Centered */}
+        <div className="flex-1 flex justify-center gap-[3%] w-full">
+          <GlassCard 
+            emoji="🇪🇬🇯🇴" icon={Landmark} 
+            title="National Leadership" 
+            desc="Drawing inspiration from models like Egyptian and Jordanian laws in establishing national councils to monitor guarantees." 
+            isActive={isActive} delay="delay-500" 
+            className="w-[31.33%] shrink-0" 
+          />
+          <GlassCard 
+            emoji="🚨" icon={ShieldAlert} 
+            title="Crisis Protocols" 
+            desc="Pressuring to activate Article 11 of the Convention obligating warring parties to rescue persons with disabilities during disasters." 
+            isActive={isActive} delay="delay-600" 
+            className="w-[31.33%] shrink-0 border-red-500/30 bg-red-500/5 hover:border-red-500/60" 
+          />
         </div>
       </div>
+
     </div>
   </div>
 );
@@ -275,33 +313,33 @@ const Slide5 = ({ isActive }) => (
 const Slide6 = ({ isActive }) => (
   <div className="relative w-full h-full text-white">
     <VideoBackground url="https://stream.mux.com/JNJEOYI6B3EffB9f5ZhpGbuxzc6gSyJcXaCBbCgZKRg.m3u8" />
-    <Header centerText="تحليل مفصل 🔍" rightText="06" isActive={isActive} />
+    <Header centerText="Deep Analysis 🔍" rightText="06" isActive={isActive} />
     
     <div className="relative z-10 w-full h-full flex flex-row items-center px-[5.2%] gap-[6%]">
       <div className="w-[35%] flex flex-col gap-[clamp(20px,2.5vw,40px)]">
-        <div style={glassStyle} className={`hover-glass p-[clamp(20px,2.5vw,40px)] rounded-3xl flex items-center gap-[6%] ${isActive ? 'anim-right delay-200' : 'opacity-0'}`}>
-          <div className="w-[20%] flex justify-center text-[clamp(32px,3.5vw,56px)] font-black text-[#D2FF55] drop-shadow-[0_0_15px_rgba(210,255,85,0.5)]">١</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold">الحقوق المدنية والسياسية 🗳️</div>
+        <div style={glassStyle} className={`hover-glass p-[clamp(20px,2.5vw,40px)] rounded-3xl flex items-center gap-[6%] ${isActive ? 'anim-left delay-200' : 'opacity-0'}`}>
+          <div className="w-[20%] flex justify-center text-[clamp(32px,3.5vw,56px)] font-black text-[#D2FF55] drop-shadow-[0_0_15px_rgba(210,255,85,0.5)]">1</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold">Civil & Political Rights 🗳️</div>
         </div>
-        <div style={glassStyle} className={`hover-glass p-[clamp(20px,2.5vw,40px)] rounded-3xl flex items-center gap-[6%] ${isActive ? 'anim-right delay-300' : 'opacity-0'}`}>
-          <div className="w-[20%] flex justify-center text-[clamp(32px,3.5vw,56px)] font-black text-[#D2FF55] drop-shadow-[0_0_15px_rgba(210,255,85,0.5)]">٢</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold">التمكين الاقتصادي والتعليمي 🎓</div>
+        <div style={glassStyle} className={`hover-glass p-[clamp(20px,2.5vw,40px)] rounded-3xl flex items-center gap-[6%] ${isActive ? 'anim-left delay-300' : 'opacity-0'}`}>
+          <div className="w-[20%] flex justify-center text-[clamp(32px,3.5vw,56px)] font-black text-[#D2FF55] drop-shadow-[0_0_15px_rgba(210,255,85,0.5)]">2</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold">Economic Empowerment 🎓</div>
         </div>
-        <div style={glassStyle} className={`hover-glass p-[clamp(20px,2.5vw,40px)] rounded-3xl flex items-center gap-[6%] ${isActive ? 'anim-right delay-400' : 'opacity-0'}`}>
-          <div className="w-[20%] flex justify-center text-[clamp(32px,3.5vw,56px)] font-black text-[#D2FF55] drop-shadow-[0_0_15px_rgba(210,255,85,0.5)]">٣</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold">الاعتراف بالأهلية القانونية 📑</div>
+        <div style={glassStyle} className={`hover-glass p-[clamp(20px,2.5vw,40px)] rounded-3xl flex items-center gap-[6%] ${isActive ? 'anim-left delay-400' : 'opacity-0'}`}>
+          <div className="w-[20%] flex justify-center text-[clamp(32px,3.5vw,56px)] font-black text-[#D2FF55] drop-shadow-[0_0_15px_rgba(210,255,85,0.5)]">3</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold">Legal Capacity Recognition 📑</div>
         </div>
       </div>
       
       <div className="w-[65%] flex flex-col">
-        <div className={`inline-block bg-[#D2FF55]/10 border border-[#D2FF55]/30 text-[#D2FF55] px-4 py-2 rounded-full w-max mb-6 font-bold ${isActive ? 'anim-down delay-100' : 'opacity-0'}`}>تحليل منهجي</div>
+        <div className={`inline-block bg-[#D2FF55]/10 border border-[#D2FF55]/30 text-[#D2FF55] px-4 py-2 rounded-full w-max mb-6 font-bold tracking-wide uppercase text-sm ${isActive ? 'anim-down delay-100' : 'opacity-0'}`}>Systematic Analysis</div>
         <h2 className={`text-[clamp(40px,6vw,95px)] tracking-tight leading-[1.1] font-extrabold mb-[5%] ${isActive ? 'anim-up delay-200' : 'opacity-0'}`}>
-          منظومة الحقوق المتكاملة 🧩
+          Integrated Rights System 🧩
         </h2>
         <p className={`text-[clamp(18px,1.6vw,30px)] opacity-95 leading-[1.9] font-medium text-justify bg-white/5 p-8 rounded-3xl border border-white/10 ${isActive ? 'anim-up delay-500' : 'opacity-0'}`}>
-          الخطأ الشائع هو حصر حقوق الأشخاص ذوي الإعاقة في زاوية الرعاية الطبية 🏥. في الواقع، يمتد نطاق الحقوق ليشمل طيفاً متكاملاً يبدأ بـ <strong className="text-[#D2FF55]">الحقوق المدنية</strong> التي تضمن الحق في الحياة، الخصوصية، وتأسيس أسرة 👨‍👩‍👧‍👦.
+          A common misconception is confining disability rights to medical care 🏥. In reality, rights span a comprehensive spectrum starting with <strong className="text-[#D2FF55]">Civil Rights</strong> ensuring the right to life, privacy, and founding a family 👨‍👩‍👧‍👦.
           <br/><br/>
-          وتكتمل الدائرة بـ <strong className="text-blue-400">الحقوق السياسية</strong> التي تضمن المشاركة النشطة في صنع القرار. وفي صميم ذلك يأتي <strong className="text-purple-400">التمكين الاقتصادي</strong> عبر توفير بيئة عمل مُيسرة 💼 تكسر دائرة التهميش المالي.
+          It completes the circle with <strong className="text-blue-400">Political Rights</strong> guaranteeing active participation in decision-making. At its core is <strong className="text-purple-400">Economic Empowerment</strong> through an accessible workplace 💼, breaking the cycle of financial marginalization.
         </p>
       </div>
     </div>
@@ -312,22 +350,22 @@ const Slide6 = ({ isActive }) => (
 const Slide7 = ({ isActive }) => (
   <div className="relative w-full h-full text-white flex flex-col">
     <VideoBackground url="https://stream.mux.com/Kec29dVyJgiPdtWaQtPuEiiGHkJIYQAVUJcNiIHUYeo.m3u8" />
-    <Header centerText="مراحل العمل 🚀" rightText="07" isActive={isActive} />
+    <Header centerText="Action Phases 🚀" rightText="07" isActive={isActive} />
     <div className="relative z-10 w-full flex-1 flex flex-col pt-[8%] px-[5.2%] pb-[8%]">
       <h2 className={`text-[clamp(36px,5.5vw,85px)] font-extrabold mb-[6%] text-center ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-        مراحل التنفيذ المؤسسي والتشريعي 📈
+        Institutional Implementation Phases 📈
       </h2>
       <div className="flex-1 flex flex-row gap-[3%] items-stretch">
-        <GlassCard emoji="🌐" icon={Globe} title="الاعتراف الدولي" desc="اعتماد الاتفاقية الأممية (2006) كمرجع ملزم ينهي عصر الوصاية." isActive={isActive} delay="delay-200" className="w-[23%] overflow-hidden relative group">
+        <GlassCard emoji="🌐" icon={Globe} title="Int'l Recognition" desc="Adopting the UN Convention (2006) as a binding reference ending the era of guardianship." isActive={isActive} delay="delay-200" className="w-[23%] overflow-hidden relative group">
           <div className="text-[150px] font-black opacity-5 absolute -top-8 -right-8 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#D2FF55]">1</div>
         </GlassCard>
-        <GlassCard emoji="🗺️" icon={FileText} title="المواثيق الإقليمية" desc="تطويع القوانين الدولية لتناسب السياقات الثقافية للمنطقة العربية والأفريقية." isActive={isActive} delay="delay-300" className="w-[23%] overflow-hidden relative group">
+        <GlassCard emoji="🗺️" icon={FileText} title="Regional Covenants" desc="Adapting international laws to suit cultural contexts for the Arab and African regions." isActive={isActive} delay="delay-300" className="w-[23%] overflow-hidden relative group">
           <div className="text-[150px] font-black opacity-5 absolute -top-8 -right-8 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#D2FF55]">2</div>
         </GlassCard>
-        <GlassCard emoji="⚖️" icon={BookOpen} title="التشريع الوطني" desc="سن قوانين محلية تفصيلية مصحوبة بآليات عقاب رادعة للمخالفين لضمان الجدية." isActive={isActive} delay="delay-400" className="w-[23%] overflow-hidden relative group">
+        <GlassCard emoji="⚖️" icon={BookOpen} title="National Legislation" desc="Enacting detailed local laws accompanied by deterrent penalty mechanisms to ensure seriousness." isActive={isActive} delay="delay-400" className="w-[23%] overflow-hidden relative group">
           <div className="text-[150px] font-black opacity-5 absolute -top-8 -right-8 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#D2FF55]">3</div>
         </GlassCard>
-        <GlassCard emoji="✅" icon={CheckCircle} title="التطبيق العملي" desc="التغيير الملموس: دمج التعليم، تعديل البنية التحتية، والمراقبة الصارمة للمؤسسات." isActive={isActive} delay="delay-500" className="w-[23%] overflow-hidden relative group">
+        <GlassCard emoji="✅" icon={CheckCircle} title="Practical Application" desc="Tangible change: inclusive education, modifying infrastructure, and strict monitoring." isActive={isActive} delay="delay-500" className="w-[23%] overflow-hidden relative group">
           <div className="text-[150px] font-black opacity-5 absolute -top-8 -right-8 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#D2FF55]">4</div>
         </GlassCard>
       </div>
@@ -339,31 +377,31 @@ const Slide7 = ({ isActive }) => (
 const Slide8 = ({ isActive }) => (
   <div className="relative w-full h-full text-white flex flex-col">
     <VideoBackground url="https://stream.mux.com/fHfa8VIbBdqZelLGg5thjsypZ101M01dbyIMLNDWQwlLA.m3u8" />
-    <Header centerText="النتائج والتطلعات 🎯" rightText="08" isActive={isActive} />
+    <Header centerText="Impact & Expectations 🎯" rightText="08" isActive={isActive} />
     <div className="relative z-10 w-full flex-1 flex flex-col pt-[8%] items-center justify-center px-[5.2%] pb-[6%]">
       <h2 className={`text-[clamp(36px,5.5vw,85px)] font-extrabold mb-[4%] text-center ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-        مؤشرات الأداء الرئيسية 📊
+        Key Performance Indicators 📊
       </h2>
       <div className="w-[90%] h-[75%] grid grid-cols-2 grid-rows-2 gap-[3%]">
         <GlassCard isActive={isActive} delay="delay-200" className="items-center text-center justify-center !p-6 hover:border-[#D2FF55]/50">
           <div className="text-[clamp(60px,7.5vw,130px)] font-black text-[#D2FF55] leading-none mb-4 pulse-glow">5%</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2">حصة التوظيف الإلزامية 💼</div>
-          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80">الحد الأدنى لضمان الاستدامة المالية والتمكين الاقتصادي الحقيقي.</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2">Mandatory Employment Quota 💼</div>
+          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80">The minimum threshold to ensure financial sustainability and true economic empowerment.</div>
         </GlassCard>
         <GlassCard isActive={isActive} delay="delay-300" className="items-center text-center justify-center !p-6 hover:border-blue-400/50">
           <div className="text-[clamp(60px,7.5vw,130px)] font-black text-[#D2FF55] leading-none mb-4 pulse-glow">100%</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2">إعفاءات شاملة 🚘</div>
-          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80">تسهيلات ضريبية وجمركية كاملة للأجهزة التعويضية ووسائل النقل.</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2">Comprehensive Exemptions 🚘</div>
+          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80">Full tax and customs facilitation for prosthetic devices and transportation means.</div>
         </GlassCard>
         <GlassCard isActive={isActive} delay="delay-400" className="items-center text-center justify-center !p-6 hover:border-purple-400/50">
           <div className="text-[clamp(60px,7.5vw,130px)] font-black text-[#D2FF55] leading-none mb-4 pulse-glow">2030</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2">الرؤية المستقبلية 🔭</div>
-          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80">الأفق الزمني لتحقيق التنمية المستدامة التي لا تترك أحداً خلف الركب.</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2">Future Vision 🔭</div>
+          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80">The timeframe to achieve sustainable development that leaves no one behind.</div>
         </GlassCard>
         <GlassCard isActive={isActive} delay="delay-500" className="items-center text-center justify-center !p-6 border-red-500/20 hover:border-red-500/60 bg-red-500/5">
           <div className="text-[clamp(60px,7.5vw,130px)] font-black text-red-400 leading-none mb-4 pulse-glow-red">11</div>
-          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2 text-red-100">بند الحماية الدولية 🚨</div>
-          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80 text-red-100/80">المادة الطارئة الواجب تفعيلها فوراً لإنقاذ الأرواح وقت النزاعات والحروب.</div>
+          <div className="text-[clamp(18px,1.6vw,28px)] font-bold mb-2 text-red-100">Int'l Protection Clause 🚨</div>
+          <div className="text-[clamp(14px,1.3vw,22px)] opacity-80 text-red-100/80">The emergency article that must be activated immediately to save lives during conflicts.</div>
         </GlassCard>
       </div>
     </div>
@@ -380,37 +418,37 @@ const Slide9 = ({ isActive }) => (
         <Quote className="w-[clamp(60px,8vw,120px)] h-[clamp(60px,8vw,120px)] text-[#D2FF55] opacity-90 relative z-10 anim-float" />
       </div>
       <h2 className="text-[clamp(38px,5.5vw,90px)] tracking-tight leading-[1.4] font-black drop-shadow-2xl">
-        «إن توفير الحماية القانونية للأشخاص ذوي الإعاقة ليس ترفاً أو مِنّة، بل هو <span className="text-[#D2FF55]">التزام أخلاقي</span> يعكس جوهر إنسانيتنا، واستحقاق قانوني لا يسقط بالتقادم.» ✨
+        "Providing legal protection for persons with disabilities is not a luxury or a favor, but a <span className="text-[#D2FF55]">moral obligation</span> reflecting the core of our humanity." ✨
       </h2>
       <div className="w-32 h-2 bg-gradient-to-r from-transparent via-[#D2FF55] to-transparent mt-4 rounded-full opacity-80"></div>
     </div>
   </div>
 );
 
-// --- Slide 10: Conclusion (Redesigned Layout) ---
+// --- Slide 10: Conclusion ---
 const Slide10 = ({ isActive }) => (
   <div className="relative w-full h-full text-white">
     <VideoBackground url="https://stream.mux.com/00qQnfNo7sSpn3pB1hYKkyeSDvxs01NxiQ3sr29uL3e028.m3u8" />
-    <Header centerText="الخاتمة 🏁" rightText="10" isActive={isActive} />
+    <Header centerText="Conclusion 🏁" rightText="10" isActive={isActive} />
     
     <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-[5.2%] pt-[4%]">
       {/* Top Centered Section */}
       <div className="text-center w-full max-w-5xl mx-auto mb-[6%]">
         <h2 className={`text-[clamp(40px,6vw,95px)] tracking-tight font-extrabold mb-[3%] ${isActive ? 'anim-up delay-100' : 'opacity-0'}`}>
-          الخاتمة والخطوات القادمة 🚀
+          Conclusion & Next Steps 🚀
         </h2>
         <p className={`text-[clamp(18px,1.6vw,30px)] opacity-95 leading-[1.8] font-medium text-center ${isActive ? 'anim-up delay-200' : 'opacity-0'}`}>
-          يجب أن تتضافر الجهود التشريعية الصارمة مع حملات الوعي المجتمعي العميق لضمان بناء بيئة حضارية خالية من العوائق المادية والنفسية، تحترم الاختلاف وتثمن القدرات 🌟.
+          Strict legislative efforts must converge with deep societal awareness campaigns to ensure the building of a civilized environment free of physical and psychological barriers, respecting differences and valuing capabilities 🌟.
         </p>
       </div>
       
       {/* Bottom Section: 2x2 Perfectly Spaced Grid */}
       <div className="grid grid-cols-2 grid-rows-2 gap-[3%] w-full max-w-7xl h-[45%]">
         {[
-          { icon: Building2, emoji: "🏢", text: "التطبيق الفوري لمعايير التصميم الشامل والهندسي" },
-          { icon: Megaphone, emoji: "📣", text: "تغليظ العقوبات على كافة أشكال التمييز الوظيفي" },
-          { icon: Heart, emoji: "❤️", text: "تأمين ممرات إنسانية للمساعدة وقت النزاعات" },
-          { icon: Activity, emoji: "💻", text: "إدماج التكنولوجيا المساعدة بقوة في مراحل التعليم" }
+          { icon: Building2, emoji: "🏢", text: "Immediate application of universal and architectural design standards" },
+          { icon: Megaphone, emoji: "📣", text: "Stiffening penalties on all forms of employment discrimination" },
+          { icon: Heart, emoji: "❤️", text: "Securing humanitarian corridors for assistance during conflicts" },
+          { icon: Activity, emoji: "💻", text: "Strongly integrating assistive technology in educational stages" }
         ].map((item, idx) => (
           <div 
             key={idx} 
@@ -444,8 +482,9 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (['ArrowLeft', 'ArrowDown', ' '].includes(e.key)) { e.preventDefault(); nextSlide(); }
-      if (['ArrowRight', 'ArrowUp'].includes(e.key)) { e.preventDefault(); prevSlide(); }
+      // Standard LTR keyboard navigation
+      if (['ArrowRight', 'ArrowDown', ' '].includes(e.key)) { e.preventDefault(); nextSlide(); }
+      if (['ArrowLeft', 'ArrowUp'].includes(e.key)) { e.preventDefault(); prevSlide(); }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -464,8 +503,8 @@ export default function App() {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: `
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap');
-        body, html { margin: 0; padding: 0; background: #000; overflow: hidden; font-family: 'Tajawal', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+        body, html { margin: 0; padding: 0; background: #000; overflow: hidden; font-family: 'Plus Jakarta Sans', sans-serif; }
         
         /* Interactive Enhancements */
         .hover-glass:hover {
@@ -494,17 +533,17 @@ export default function App() {
         }
         .pulse-glow-red { animation: glow-red 3s ease-in-out infinite; }
         
-        /* Keyframes for Entrances */
+        /* Keyframes for Entrances (Adjusted for LTR) */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInRightRTL { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes fadeInLeftRTL { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
         @keyframes zoomIn { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
         
         .anim-up { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .anim-down { animation: fadeInDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .anim-right { animation: fadeInRightRTL 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .anim-left { animation: fadeInLeftRTL 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .anim-right { animation: fadeInRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .anim-left { animation: fadeInLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .anim-zoom { animation: zoomIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .anim-scale { animation: zoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         
@@ -515,27 +554,33 @@ export default function App() {
         .delay-700 { animation-delay: 700ms; } .delay-800 { animation-delay: 800ms; }
       `}} />
       
-      {/* Perspective wrapper for 3D transitions */}
-      <div dir="rtl" className="relative w-screen h-screen overflow-hidden bg-[#050505] text-white cursor-default" style={{ perspective: '1200px' }}>
+      {/* Perspective wrapper for 3D transitions - Set to LTR */}
+      <div dir="ltr" className="relative w-screen h-screen overflow-hidden bg-[#050505] text-white cursor-default" style={{ perspective: '1200px' }}>
+        
+        {/* Top Hint Text */}
+        <div className={`absolute top-[4%] right-[5.2%] text-[11px] text-white/40 tracking-wide z-50 transition-opacity duration-300 pointer-events-none uppercase font-bold ${controlsVisible ? 'opacity-100' : 'opacity-0'}`}>
+          ← → Navigate &middot; F Fullscreen
+        </div>
+
         {slides.map((SlideComponent, index) => {
           const isActive = index === currentSlide;
           const isPast = index < currentSlide;
           const isFuture = index > currentSlide;
 
-          // Cinematic 3D Transitions
+          // Cinematic 3D Transitions (Adjusted for LTR visual flow)
           let transform = 'translateX(0) scale(1) rotateY(0) translateZ(0)';
           let opacity = '1';
           let filter = 'blur(0px)';
           let visibility = 'visible';
           
           if (isPast) {
-            transform = 'translateX(30%) scale(0.85) rotateY(-12deg) translateZ(-150px)';
+            transform = 'translateX(-30%) scale(0.85) rotateY(12deg) translateZ(-150px)';
             opacity = '0';
             filter = 'blur(15px)';
             // Hide fully after transition to save resources
             if(currentSlide - index > 1) visibility = 'hidden'; 
           } else if (isFuture) {
-            transform = 'translateX(-30%) scale(0.85) rotateY(12deg) translateZ(-150px)';
+            transform = 'translateX(30%) scale(0.85) rotateY(-12deg) translateZ(-150px)';
             opacity = '0';
             filter = 'blur(15px)';
             if(index - currentSlide > 1) visibility = 'hidden';
@@ -564,7 +609,7 @@ export default function App() {
           <div className="text-[15px] text-white/70 font-bold tabular-nums min-w-[50px] text-center font-sans tracking-widest">
             {currentSlide + 1} / {slides.length}
           </div>
-          <div className="mx-6 flex items-center gap-3">
+          <div className="mx-6 flex items-center gap-3 border-l border-white/10 pl-6">
             {slides.map((_, idx) => (
               <div 
                 key={idx} 
@@ -573,12 +618,12 @@ export default function App() {
               />
             ))}
           </div>
-          <div className="flex items-center gap-3 border-r border-white/10 pr-4">
+          <div className="flex items-center gap-3 border-l border-white/10 pl-6 ml-6">
             <button onClick={prevSlide} disabled={currentSlide === 0} className="w-12 h-12 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 hover:scale-110 disabled:opacity-20 disabled:hover:scale-100 disabled:hover:bg-transparent transition-all">
-              <ChevronRight size={24} />
+              <ChevronLeft size={24} />
             </button>
             <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className="w-12 h-12 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 hover:scale-110 disabled:opacity-20 disabled:hover:scale-100 disabled:hover:bg-transparent transition-all">
-              <ChevronLeft size={24} />
+              <ChevronRight size={24} />
             </button>
           </div>
         </div>
